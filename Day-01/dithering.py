@@ -1,6 +1,7 @@
 import pygame
-from PIL import Image
+from PIL import Image, ImageOps
 img = Image.open("data/Tiger512.jpg")
+# img = ImageOps.grayscale(inp)
 pixel_map = img.load()
 img_data = img.tobytes()
 img_dimensions = img.size
@@ -94,6 +95,7 @@ def processImage():
     image2_surface = pygame.image.fromstring(img.tobytes(), img_dimensions, "RGB")
     screen.blit(image2_surface, (512, 0))
     pygame.display.flip()
+    img.save("data/out.jpg")
     
     # img2_data = img2.tobytes()
     # img2_dimensions = img2.size

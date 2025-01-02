@@ -1,1 +1,0 @@
- # pixels = list(img.getdata())
